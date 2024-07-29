@@ -1,1 +1,1 @@
-# The page will be published after article acceptance
+# The page will be published soon
