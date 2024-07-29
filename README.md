@@ -39,7 +39,7 @@ See more [here (soon)](http://).
 Python 3
 PyTorch
 NumPy
-gym=0.19.0
+gymnasium
 matplotlib
 ```
 
