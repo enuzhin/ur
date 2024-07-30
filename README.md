@@ -28,7 +28,7 @@ See more [here (soon)](http://).
 
 |     Simulation      |                                                                                                                                             Agents Distribution                                                                                                                                             |
 |:-------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ![out/sim.gif](https://github.com/enuzhin/ur/blob/main/out/sim.gif) | <object data="out/pdf.pdf" type="application/pdf" width="700px" height="700px"><embed src="out/pdf.pdf"><p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.dropbox.com/s/a1hdh6vlcoknwsb/software_achitecture.pdf?dl=0">Download PDF</a>.</p></embed></object> |
+| ![](https://github.com/enuzhin/ur/blob/main/out/sim.gif) | <object data="out/pdf.pdf" type="application/pdf" width="700px" height="700px"><embed src="out/pdf.pdf"><p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.dropbox.com/s/a1hdh6vlcoknwsb/software_achitecture.pdf?dl=0">Download PDF</a>.</p></embed></object> |
 
 
 
