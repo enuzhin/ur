@@ -1,5 +1,5 @@
-from ur.env import MultiValleyMountainCarEnv
-from ur.net import TripleNet
+from lib.env import MultiValleyMountainCarEnv,StandUpEnv
+from lib.net import TripleNet
 import torch
 import numpy as np
 import argparse
@@ -13,10 +13,20 @@ def simulate(config):
     niters = config["niters"]
     path_to_save = config["path_to_save"]
     path_to_load = config["path_to_load"]
+    env_name = config["env"].lower()
 
     # User notification
     print("Simulation started")
     print()
+    if env_name == "mvmc":
+        print("Environment: Multi Valley Mountain Car")
+        env = MultiValleyMountainCarEnv()
+    elif env_name == "standup":
+        print("Environment: Stand Up")
+        env = StandUpEnv()
+    else:
+        print("Wrong environment name")
+        return
     print("Number of simulation steps: ",niters)
     print("NN model: ", path_to_load)
     print("GIF will be saved as: ", path_to_save)
@@ -26,10 +36,14 @@ def simulate(config):
     device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
     print("Device: ",device.type)
     print()
-    env = MultiValleyMountainCarEnv(force=0.001)
-    model = TripleNet(2, 2, 3, lr_v=1e-5, lr_p=1e-5, lr_pi=1e-5, weight_decay_v=1e-4, weight_decay_p=5e-4,
-                    weight_decay_pi=5e-6, reflecting_representation=env.reflecting_representation).to(device)
-    model.load_state_dict(torch.load(path_to_load))
+    if env_name == "mvmc":
+        model = TripleNet(2, 2, 3, lr_v=1e-5, lr_p=1e-5, lr_pi=1e-5, weight_decay_v=1e-4, weight_decay_p=5e-4,
+                        weight_decay_pi=5e-6, reflecting_representation=env.reflecting_representation).to(device)
+    elif env_name == "standup":
+        model = TripleNet(2, 4, hidden_dims=[128, 128], lr_v=1e-6, lr_p=1e-7, lr_pi=1e-6, weight_decay_v=1e-5,
+                        weight_decay_p=5e-4, weight_decay_pi=5e-5,
+                        reflecting_representation=env.reflecting_representation).to(device)
+    model.load_state_dict(torch.load(path_to_load,weights_only=True))
     model.eval()
 
 
@@ -59,7 +73,6 @@ def save_frames_as_gif(frames, path):
         patch.set_data(frames[i])
 
     anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=50)
-    # anim.save(path, writer='imagemagick', fps=60)
     anim.save(path)
 
 
@@ -70,6 +83,7 @@ def main():
     parser.add_argument("--niters", help="Number of simulation steps",default=1_000,type = int)
     parser.add_argument("--path_to_save", help="Path to save gif",default="out/sim.gif",type = str)
     parser.add_argument("--path_to_load", help="Path to upload NN", default="out/net.pth", type=str)
+    parser.add_argument("--env", help="Environment: MVMC or StandUp", default="mvmc", choices=['mvmc', 'standup'])
 
     args = parser.parse_args()
     config = vars(args)
