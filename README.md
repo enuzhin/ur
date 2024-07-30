@@ -22,7 +22,7 @@ See more [here (soon)](http://).
 4)  Use `python simulate.py` to run the policy simulation.
 % 5)  Use `python pdf.py` to evaluate agents' distribution in the environment.
 5)  Use `python script -h` to see the list of available parameters and default values (replace `script` with `train.py`, `simulate.py` or `pdf.py` script name)
-
+![](https://github.com/enuzhin/ur/blob/main/out/sim.gif)
 ## Examples
 
 
