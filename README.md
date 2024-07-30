@@ -26,9 +26,9 @@ See more [here (soon)](http://).
 ## Examples
 
 
-|     Simulation      |                                                                                                                                          Agents Distribution                                                                                                                                           |
-|:-------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ![GIF](out/sim.gif) |        <object data="out/pdf.pdf" type="application/pdf" width="700px" height="700px"><embed src="out/pdf.pdf"><p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/enuzhin/ur/blob/main/out/pdf.pdf">Download PDF</a>.</p></embed></object>         |
+|      Simulation      |                                                                                                                                    Agents Distribution                                                                                                                                     |
+|:--------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![GIF](out/mvmc.gif) | <object data="out/mvmc.pdf" type="application/pdf" width="700px" height="700px"><embed src="out/mvmc.pdf"><p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/enuzhin/ur/blob/main/out/mvmc.pdf">Download PDF</a>.</p></embed></object> |
 
 
 
