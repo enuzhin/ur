@@ -23,6 +23,8 @@ See more [here (soon)](http://).
 5)  Use `python mvmc_pdf.py` to evaluate agents' distribution in the environment.
 6)  Use `python script -h` to see the list of available parameters and default values (replace `script` with `train.py`, `simulate.py` or `pdf.py` script name)
 
+<object data="out/mvmc.pdf" width="1000" height="1000" type='application/pdf'></object>
+
 ## Examples
 
 
