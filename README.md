@@ -9,11 +9,10 @@
 Unlike conventional RL methods that rely on sequential trajectory simulations, **Umbrella Reinforcement Learning** employs **random state sampling**, ensuring **invariance to discretization time steps** and **independence from fixed episode lengths**. This results in more efficient learning across a diverse range of environments.
 
 ## Features
-- **Robust Exploration**: Effectively navigates environments with sparse rewards and complex dynamics.
-- **Stable Convergence**: Invariant to simulation time-step selection, ensuring numerical consistency.
-- **Modular and Extensible**: Easily integrates into **custom RL environments** and allows for modifications.
-- **OpenAI Gym-Compatible**: Environments adhere to the **Gym API**, enabling seamless integration.
-- **Optimized Implementation**: Utilizes **PyTorch** for automatic differentiation and computational efficiency.
+- **Robust exploration**: Effectively navigates environments with sparse rewards and complex dynamics.
+- **Stable convergence**: Invariant to simulation time-step selection, ensuring numerical consistency.
+- **OpenAI Gym-compatible**: Environments adhere to the **Gym API**, enabling seamless integration.
+- **Optimized implementation**: Utilizes **PyTorch** for automatic differentiation and computational efficiency.
 
 ## Applications
 Umbrella Reinforce has demonstrated superior performance in tackling complex RL problems, including:
@@ -24,37 +23,37 @@ Umbrella Reinforce has demonstrated superior performance in tackling complex RL 
 
 Follow these steps to set up and run Umbrella Reinforce:
 
-### 1. Clone the Repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/enuzhin/ur.git
 cd ur
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies
 Ensure you have Python 3 installed, then install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Train the Model
+### 3. Train the model
 Run the training script to train the reinforcement learning agent:
 ```bash
 python train.py
 ```
 
-### 4. Run a Policy Simulation
+### 4. Run a policy simulation
 Once training is complete, test the trained policy using:
 ```bash
 python simulate.py
 ```
 
-### 5. Evaluate Agents' Distribution
+### 5. Evaluate agents' distribution
 Analyze the distribution of agents in the environment with:
 ```bash
 python mvmc_pdf.py
 ```
 
-### 6. View Available Parameters
+### 6. View comprehasive list of parameters
 For a list of available parameters and their default values, run:
 ```bash
 python train.py -h
