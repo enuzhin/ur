@@ -1,12 +1,12 @@
-# Umbrella Reinforce
+# Umbrella Reinforcement Learning
 
-**Umbrella Reinforce** is an advanced **Reinforcement Learning (RL) algorithm** inspired by the **Umbrella Sampling** technique from computational physics. It is specifically designed to address key challenges in RL, including:
+**Umbrella Reinforcement Learning** is an advanced **Reinforcement Learning (RL) algorithm** inspired by the **Umbrella Sampling** technique from computational physics. It is specifically designed to address key challenges in RL, including:
 
 - **Long-delayed rewards**, which hinder learning efficiency.
 - **State traps**, where conventional algorithms struggle to escape local optima.
 - **Lack of a terminal state**, making policy optimization difficult.
 
-Unlike conventional RL methods that rely on sequential trajectory simulations, **Umbrella Reinforce** employs **random state sampling**, ensuring **invariance to discretization time steps** and **independence from fixed episode lengths**. This results in more efficient learning across a diverse range of environments.
+Unlike conventional RL methods that rely on sequential trajectory simulations, **Umbrella Reinforcement Learning** employs **random state sampling**, ensuring **invariance to discretization time steps** and **independence from fixed episode lengths**. This results in more efficient learning across a diverse range of environments.
 
 ## Features
 - **Robust Exploration**: Effectively navigates environments with sparse rewards and complex dynamics.
