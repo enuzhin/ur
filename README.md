@@ -1,43 +1,75 @@
-# Umbrella Reinforce: source
+# Umbrella Reinforce
 
-Umbrella Reinforce is a **Reinforcement Learning** algorithm inspired by the **Umbrella Sampling** technique, which is popular in computational physics. The algorithm combines ideas from policy gradient RL and classical control. The algorithm is powerful in reducing difficulties of RL problems such as:
-- long-delayed reward;
-- states-traps;
-- lack of the terminal state.
+**Umbrella Reinforce** is an advanced **Reinforcement Learning (RL) algorithm** inspired by the **Umbrella Sampling** technique from computational physics. It is specifically designed to address key challenges in RL, including:
 
-The algorithm is beneficial in application to **custom environment**, since it is **invariant** w.r.t. **discretization time step** and does not require to bother of **episode length** on account of **random states sampling** in contrast to familiar step-by-step simulations.
+- **Long-delayed rewards**, which hinder learning efficiency.
+- **State traps**, where conventional algorithms struggle to escape local optima.
+- **Lack of a terminal state**, making policy optimization difficult.
 
-The algorithm is applied to the Multi-Valley Moutain Car and StandUp problems, which completely represents the described difficulties. 
+Unlike conventional RL methods that rely on sequential trajectory simulations, **Umbrella Reinforce** employs **random state sampling**, ensuring **invariance to discretization time steps** and **independence from fixed episode lengths**. This results in more efficient learning across a diverse range of environments.
 
-The algorithm is implemented in the **PyTorch** auto-differentiation package and the authors **encourages to use the source code** of the project  for custom **algorithms modifications** and for **custom problems**. The source code of the environments is **free to use**. It implements an abstract OpenAI **Gym interface** to be easily incorporated into other projects.
+## Features
+- **Robust Exploration**: Effectively navigates environments with sparse rewards and complex dynamics.
+- **Stable Convergence**: Invariant to simulation time-step selection, ensuring numerical consistency.
+- **Modular and Extensible**: Easily integrates into **custom RL environments** and allows for modifications.
+- **OpenAI Gym-Compatible**: Environments adhere to the **Gym API**, enabling seamless integration.
+- **Optimized Implementation**: Utilizes **PyTorch** for automatic differentiation and computational efficiency.
 
-See more [here (soon)](http://).
+## Applications
+Umbrella Reinforce has demonstrated superior performance in tackling complex RL problems, including:
+- **Multi-Valley Mountain Car**: A variant of the Mountain Car problem featuring multiple valleys, requiring strategic long-term planning and precise control.
+- **StandUp Problem**: A robotic learning task in which an articulated arm must achieve and maintain balance in an upright position without predefined termination states.
 
+## Installation & Usage
 
-## Usage
+Follow these steps to set up and run Umbrella Reinforce:
 
-1)  Clone the repository.
-2)  Install dependeces.
-3)  Use `python train.py` to train the neural network.
-4)  Use `python simulate.py` to run the policy simulation.
-5)  Use `python mvmc_pdf.py` to evaluate agents' distribution in the environment.
-6)  Use `python script -h` to see the list of available parameters and default values (replace `script` with `train.py`, `simulate.py` or `pdf.py` script name)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/enuzhin/ur.git
+cd ur
+```
 
-<object data="out/mvmc.pdf" width="700px" height="700px" type='application/pdf'></object>
+### 2. Install Dependencies
+Ensure you have Python 3 installed, then install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Train the Model
+Run the training script to train the reinforcement learning agent:
+```bash
+python train.py
+```
+
+### 4. Run a Policy Simulation
+Once training is complete, test the trained policy using:
+```bash
+python simulate.py
+```
+
+### 5. Evaluate Agents' Distribution
+Analyze the distribution of agents in the environment with:
+```bash
+python mvmc_pdf.py
+```
+
+### 6. View Available Parameters
+For a list of available parameters and their default values, run:
+```bash
+python train.py -h
+```
+Replace `train.py` with `simulate.py` or `mvmc_pdf.py` for script-specific options.
 
 ## Examples
+### Simulation and Agents' Distribution
 
-
-|      Simulation      |                                                                                                                                    Agents Distribution                                                                                                                                     |
-|:--------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ![GIF](out/mvmc.gif) | <object data="out/mvmc.pdf" type="application/pdf" width="700px" height="700px"><embed src="out/mvmc.pdf"><p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/enuzhin/ur/blob/main/out/mvmc.pdf">Download PDF</a>.</p></embed></object> |
-
-
-
+| **Simulation** | **Agents' Distribution** |
+|:-------------:|:------------------------:|
+| ![GIF](out/mvmc.gif) | [📄 View PDF](out/mvmc.pdf) |
 
 ## Dependencies
-
-```
+```bash
 Python 3
 PyTorch
 NumPy
@@ -46,9 +78,9 @@ Matplotlib
 ```
 
 ## References
+- **[Umbrella Reinforcement Learning – Computationally Efficient Tool for Hard Non-Linear Problems](https://doi.org/10.1016/j.cnsns.2024.108583)**
+- **[Umbrella Sampling (Wikipedia)](https://en.wikipedia.org/wiki/Umbrella_sampling)**
+- **[Reinforcement Learning (Wikipedia)](https://en.wikipedia.org/wiki/Reinforcement_learning)**
+- **[PyTorch](https://pytorch.org)**
+- **[Gymnasium](https://gymnasium.farama.org/)**
 
-- [Umbrella Reinforce Paper (coming soon)](http://arxive.org)
-- [Umbrella Sampling (wiki)](https://en.wikipedia.org/wiki/Umbrella_sampling)
-- [Reinforcment Learning (wiki)](https://en.wikipedia.org/wiki/Reinforcement_learning)
-- [PyTorch](https://pytorch.org)
-- [Gymnasium](https://gymnasium.farama.org/)
